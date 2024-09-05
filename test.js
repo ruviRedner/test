@@ -297,7 +297,20 @@ let militaryUnit = {
   function changeDeploment(newDeploment) {
        const changeDeploment = militaryUnit.history.map(function(c){return {...c,eventDate: militaryUnit.currentDeployment.startDate,eventDescription: militaryUnit.currentDeployment.mission}})
        militaryUnit.currentDeployment = newDeploment
-       return militaryUnit.currentDeployment;
+       return militaryUnit
     
   }
   console.log(changeDeploment({location:"ftu",mission:"ftfy",startDate:"01-09-24",establishmentDate:"09-08-25"}))
+  //mission4
+  function addweapon({newWeapon}){ 
+      militaryUnit.equipment.firearms.forEach(p => {
+        if(p.quantity != newWeapon && p.status != newWeapon && p.type != newWeapon){
+            militaryUnit.equipment.firearms.push(newWeapon)
+        }
+         
+      });
+      return militaryUnit 
+      }
+    console.log(addweapon({type:"m17",quantity:"60",status:"gfgfgu"}));
+      
+  
