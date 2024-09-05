@@ -275,7 +275,7 @@ let militaryUnit = {
 
   //missoin1
   function missoin1(military) {
-       const chifOfStafphone = militaryUnit.commandStructure.chiefOfStaff.contact.phone
+       const chifOfStafphone = military.commandStructure.chiefOfStaff.phone
        const chiefOfStaffName = militaryUnit.commandStructure.chiefOfStaff.name
        const chiefOfStaffRank = militaryUnit.commandStructure.chiefOfStaff.rank
        
@@ -285,48 +285,36 @@ let militaryUnit = {
 
   //mission2
   function mission2(military){
-            let amount = 0;
-            for (let i = 0; i < militaryUnit.personnel.length; i++) {
-                 amount += 1   
-            }
-            return ` amount soljers are : ${amount} personal`
+           return `number of personal:${military.personnel.length}`
   }
   console.log(mission2(militaryUnit))
 
   //mission3
-  function mission3(newDeploment) {
-       const changeDeploment = militaryUnit.history.map(function(c){return {...c,eventDate: militaryUnit.currentDeployment.startDate,eventDescription: militaryUnit.currentDeployment.mission}})
-       militaryUnit.currentDeployment = newDeploment
-       return militaryUnit
+  function mission3(newDeploment,military) {
+           military.history.push({
+              eventDate: military.currentDeployment.startDate,
+              eventDescription:`Deploment to ${military.currentDeployment.location} for mission ${military.currentDeployment.mission}`
+            })
+            military.currentDeployment = newDeploment
+            
+            return JSON.stringify(military,null,2)
+          
     
   }
-  console.log(mission3({location:"ftu",mission:"ftfy",startDate:"01-09-24",establishmentDate:"09-08-25"}))
+  console.log(mission3({location:"ftu",mission:"ftfy",startDate:"01-09-24",establishmentDate:"09-08-25"},militaryUnit))
 
   //mission4
-  function mission4(newWeapon){ 
-     
-     const n = militaryUnit.equipment.firearms.find(weapon => {
-        weapon.type == newWeapon.type && weapon.status == newWeapon.status})
-        if(n){
-            weapon.quantity +=1
-        }
-        else{
-                militaryUnit.equipment.firearms.push({
-                type:newWeapon.type,
-                status:newWeapon.status,
-                quantity: 1
-            })
-        }
-      return militaryUnit
+  function mission4(newWeapon ,military){ 
+      const exsistinWeapon = military.equipment.firearms.find(f => f.type == newWeapon.type && f.status == newWeapon.status)
+            exsistinWeapon == true ? exsistinWeapon.quantity += 1 : military.equipment.firearms.push(newWeapon)
+            return JSON.stringify(military,null,2)    
     }
-    console.log(mission4({type:"m17",quantity:"1",status:"gfgfgu"}));
+    console.log(mission4({type:"m17",quantity:"1",status:"gfgfgu"},militaryUnit));
 
     //mission5
     function mission5(military) {
-        let total = 0;
-        const lengthTraning = militaryUnit.trainingPrograms.filter(function(s) {return s.duration})
-        total += lengthTraning
-        return total;   
+       const lengthTraining = military.trainingPrograms.reduce((sum,p) => sum + p.duration,0)
+       return `total training duration:${lengthTraining}`   
     }
     console.log(mission5(militaryUnit));
 
