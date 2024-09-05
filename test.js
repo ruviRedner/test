@@ -274,12 +274,24 @@ let militaryUnit = {
   };
 
   //missoin1
-  function reternChifOfStaf() {
-       
+  function reternChifOfStaf(military) {
        const chifOfStafphone = militaryUnit.commandStructure.chiefOfStaff.contact.phone
        const chiefOfStaffName = militaryUnit.commandStructure.chiefOfStaff.name
        const chiefOfStaffRank = militaryUnit.commandStructure.chiefOfStaff.rank
        
        return `this is the chif of staf : name:${chiefOfStaffName} rank : ${chiefOfStaffRank} phone number: ${chifOfStafphone}`   
     }
-  console.log(reternChifOfStaf())
+  console.log(reternChifOfStaf(militaryUnit))
+
+  //mission2
+  function returenAmountSoljers(military){
+            let amount = 0;
+            for (let i = 0; i < militaryUnit.personnel.length; i++) {
+                 amount += 1   
+            }
+            return ` amount soljers are : ${amount} personal`
+  }
+  console.log(returenAmountSoljers(militaryUnit))
+
+  //mission3
+  
