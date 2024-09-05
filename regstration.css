@@ -1,0 +1,56 @@
+body{
+    background-color:gainsboro;
+}
+
+#nav{
+    height: 100px;
+    background-color: green;
+}
+#textTitle{
+    color: white;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.containar{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 0;
+    margin-left: 800px;
+    margin-right: 800px;
+    gap: 150px;
+}
+#first{
+    background-color:white;
+    height: 250px;
+}
+form{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+}
+#submit{
+    background-color:green;
+    display: inline-block;
+    margin-right: 945px;
+    color: white;
+    
+}
+.fother{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+#nav1{
+    background-color: green;
+    color:white;
+    text-align: center;
+    height: 100px;
+    margin-bottom: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
