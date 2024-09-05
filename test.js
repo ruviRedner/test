@@ -329,6 +329,14 @@ let militaryUnit = {
         return total;   
     }
     console.log(mission5(militaryUnit));
+
+    module.exports= {
+      missoin1,
+      mission2,
+      mission3,
+      mission4,
+      mission5
+    }
     
       
   
