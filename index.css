@@ -1,4 +1,81 @@
+body{
+    background-color:gainsboro;
+}
+
 #nav{
-    height: 100vh;
+    height: 100px;
     background-color: green;
+}
+.containar{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 0;
+    margin-left: 600px;
+    margin-right: 600px;
+    gap: 150px;
+}
+#textTitle{
+    color: white;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#first{
+    background-color:white;
+    height: 100px;
+}
+main{
+    background-color:white;
+    height: 700px;
+}
+#firstlink{
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 800px;
+    margin-right: 800px;
+    padding-right: 300px;   
+}
+#firstlink:hover{
+    background-color: gray;
+}
+#pDiv{
+    background-color: red;
+    display: inline-block;
+    margin-right: 80px;
+    border-radius: 25%;
+}
+#pllaysolder{
+    color: gray;
+    margin-left: 300px;
+    margin-top: -100px;
+}
+#pDiv2{
+    background-color: aqua;
+    display: inline-block;
+    margin-right: 80px;
+    border-radius: 25%;
+}
+#pDiv3{
+    background-color:yellow;
+    display: inline-block;
+    margin-right: 80px;
+    border-radius: 25%;
+}
+.fother{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+#nav1{
+    background-color: green;
+    color:white;
+    text-align: center;
+    height: 100px;
+    margin-bottom: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
