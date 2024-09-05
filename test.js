@@ -274,43 +274,61 @@ let militaryUnit = {
   };
 
   //missoin1
-  function reternChifOfStaf(military) {
+  function missoin1(military) {
        const chifOfStafphone = militaryUnit.commandStructure.chiefOfStaff.contact.phone
        const chiefOfStaffName = militaryUnit.commandStructure.chiefOfStaff.name
        const chiefOfStaffRank = militaryUnit.commandStructure.chiefOfStaff.rank
        
        return `this is the chif of staf : name:${chiefOfStaffName} rank : ${chiefOfStaffRank} phone number: ${chifOfStafphone}`   
     }
-  console.log(reternChifOfStaf(militaryUnit))
+  console.log(missoin1(militaryUnit))
 
   //mission2
-  function returenAmountSoljers(military){
+  function mission2(military){
             let amount = 0;
             for (let i = 0; i < militaryUnit.personnel.length; i++) {
                  amount += 1   
             }
             return ` amount soljers are : ${amount} personal`
   }
-  console.log(returenAmountSoljers(militaryUnit))
+  console.log(mission2(militaryUnit))
 
   //mission3
-  function changeDeploment(newDeploment) {
+  function mission3(newDeploment) {
        const changeDeploment = militaryUnit.history.map(function(c){return {...c,eventDate: militaryUnit.currentDeployment.startDate,eventDescription: militaryUnit.currentDeployment.mission}})
        militaryUnit.currentDeployment = newDeploment
        return militaryUnit
     
   }
-  console.log(changeDeploment({location:"ftu",mission:"ftfy",startDate:"01-09-24",establishmentDate:"09-08-25"}))
+  console.log(mission3({location:"ftu",mission:"ftfy",startDate:"01-09-24",establishmentDate:"09-08-25"}))
+
   //mission4
-  function addweapon({newWeapon}){ 
-      militaryUnit.equipment.firearms.forEach(p => {
-        if(p.quantity != newWeapon && p.status != newWeapon && p.type != newWeapon){
-            militaryUnit.equipment.firearms.push(newWeapon)
+  function mission4(newWeapon){ 
+     
+     const n = militaryUnit.equipment.firearms.find(weapon => {
+        weapon.type == newWeapon.type && weapon.status == newWeapon.status})
+        if(n){
+            weapon.quantity +=1
         }
-         
-      });
-      return militaryUnit 
-      }
-    console.log(addweapon({type:"m17",quantity:"60",status:"gfgfgu"}));
+        else{
+                militaryUnit.equipment.firearms.push({
+                type:newWeapon.type,
+                status:newWeapon.status,
+                quantity: 1
+            })
+        }
+      return militaryUnit
+    }
+    console.log(mission4({type:"m17",quantity:"1",status:"gfgfgu"}));
+
+    //mission5
+    function mission5(military) {
+        let total = 0;
+        const lengthTraning = militaryUnit.trainingPrograms.filter(function(s) {return s.duration})
+        total += lengthTraning
+        return total;   
+    }
+    console.log(mission5(militaryUnit));
+    
       
   
