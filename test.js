@@ -294,4 +294,10 @@ let militaryUnit = {
   console.log(returenAmountSoljers(militaryUnit))
 
   //mission3
-  
+  function changeDeploment(newDeploment) {
+       const changeDeploment = militaryUnit.history.map(function(c){return {...c,eventDate: militaryUnit.currentDeployment.startDate,eventDescription: militaryUnit.currentDeployment.mission}})
+       militaryUnit.currentDeployment = newDeploment
+       return militaryUnit.currentDeployment;
+    
+  }
+  console.log(changeDeploment({location:"ftu",mission:"ftfy",startDate:"01-09-24",establishmentDate:"09-08-25"}))
