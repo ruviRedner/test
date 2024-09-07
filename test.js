@@ -275,11 +275,11 @@ let militaryUnit = {
 
   //missoin1
   function missoin1(military) {
-       const chifOfStafphone = military.commandStructure.chiefOfStaff.phone
+       const chifOfStafphone = military.commandStructure.chiefOfStaff.contact.phone
        const chiefOfStaffName = militaryUnit.commandStructure.chiefOfStaff.name
        const chiefOfStaffRank = militaryUnit.commandStructure.chiefOfStaff.rank
        
-       return `this is the chif of staf : name:${chiefOfStaffName} rank : ${chiefOfStaffRank} phone number: ${chifOfStafphone}`   
+       return `this is the chif of staf : name:${chiefOfStaffName} , rank : ${chiefOfStaffRank} , phone number: ${chifOfStafphone}`   
     }
   console.log(missoin1(militaryUnit))
 
