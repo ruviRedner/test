@@ -15,10 +15,13 @@ body{
     display: flex;
     justify-content: space-between;
     color: white;
-    margin-top: 0;
-    margin-left: 800px;
+    align-items: center;
+    width: 100%;
+    /* margin-top: 0; */
+    /* margin-left: 800px;
     margin-right: 800px;
-    gap: 150px;
+    gap: 150px; */
+
 }
 #first{
     background-color:white;
@@ -44,7 +47,7 @@ form{
     justify-content: space-between;
 
 }
-#nav1{
+#fouter{
     background-color: green;
     color:white;
     text-align: center;

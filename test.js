@@ -318,7 +318,7 @@ let militaryUnit = {
     }
     console.log(mission5(militaryUnit));
 
-    module.exports= {
+    Module.exports= {
       missoin1,
       mission2,
       mission3,
